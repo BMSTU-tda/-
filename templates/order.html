@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Заказ №{{ data.id }}{% endblock %}
+
+{% block content %}
+    <div>Информация об заказе №{{ data.id }}</div>
+    <div>Описание:</div>
+    {% for descr in data.cars %}
+            {% if data.id == descr.id %}
+            <li>{{ descr.description }} </li>
+            {% endif %}
+    {% endfor %}
+    <div>Цена:</div>
+    {% for descr in data.cars %}
+            {% if data.id == descr.id %}
+            <li>{{ descr.price }} </li>
+            {% endif %}
+    {% endfor %}
+    <div>Кол-во позиций:</div>
+     {% for descr in data.cars %}
+            {% if data.id == descr.id %}
+            <li>{{ descr.count }} </li>
+            {% endif %}
+    {% endfor %}
+{% endblock %}
